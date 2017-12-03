@@ -1,0 +1,232 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body,
+.view {
+  height: 100%;
+}
+ul,
+li,
+dl,
+ol,
+dd,
+dt {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+.clearfix:after {
+  content: ' ';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+@media only screen and (max-width: 1080px), only screen and (max-device-width: 1080px) {
+  html,
+  body {
+    font-size: 260.8695652173913px;
+  }
+}
+@media only screen and (max-width: 960px), only screen and (max-device-width: 960px) {
+  html,
+  body {
+    font-size: 231.8840579710145px;
+  }
+}
+@media only screen and (max-width: 800px), only screen and (max-device-width: 800px) {
+  html,
+  body {
+    font-size: 193.23671497584542px;
+  }
+}
+@media only screen and (max-width: 720px), only screen and (max-device-width: 720px) {
+  html,
+  body {
+    font-size: 173.91304347826087px;
+  }
+}
+@media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
+  html,
+  body {
+    font-size: 154.58937198067633px;
+  }
+}
+@media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
+  html,
+  body {
+    font-size: 144.92753623188406px;
+  }
+}
+@media only screen and (max-width: 540px), only screen and (max-device-width: 540px) {
+  html,
+  body {
+    font-size: 130.43478260869566px;
+  }
+}
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  html,
+  body {
+    font-size: 115.94202898550725px;
+  }
+}
+@media only screen and (max-width: 414px), only screen and (max-device-width: 414px) {
+  html,
+  body {
+    font-size: 100px;
+  }
+}
+@media only screen and (max-width: 400px), only screen and (max-device-width: 400px) {
+  html,
+  body {
+    font-size: 96.61835748792271px;
+  }
+}
+@media only screen and (max-width: 375px), only screen and (max-device-width: 375px) {
+  html,
+  body {
+    font-size: 90.57971014492753px;
+  }
+}
+@media only screen and (max-width: 360px), only screen and (max-device-width: 360px) {
+  html,
+  body {
+    font-size: 86.95652173913044px;
+  }
+}
+@media only screen and (max-width: 320px), only screen and (max-device-width: 320px) {
+  html,
+  body {
+    font-size: 77.29468599033817px;
+  }
+}
+@media only screen and (max-width: 240px), only screen and (max-device-width: 240px) {
+  html,
+  body {
+    font-size: 57.971014492753625px;
+  }
+}
+html {
+  font-size: 100px;
+}
+/* 视口 */
+.view {
+  padding-top: .55rem;
+  position: relative;
+  background-color: #ffffff;
+}
+/* 头部 */
+.top_tool {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #006699;
+  text-align: center;
+  color: #fff;
+  font-size: 0.18rem;
+  padding: 0.15rem 0.10rem;
+}
+.top_tool a {
+  float: right;
+  width: initial;
+  line-height: 0.25rem;
+}
+/* 底部 */
+footer {
+  position: absolute;
+  z-index: 999;
+  background-color: #006699;
+  bottom: 0;
+  width: 100%;
+  font-size: .16rem;
+}
+footer a {
+  height: .55rem;
+  padding-top: .08rem;
+  width: 25%;
+  float: left;
+  color: #fff;
+}
+footer a p {
+  color: inherit;
+}
+footer .active {
+  color: orange;
+}
+/* 隐藏备胎区域 */
+.hidden {
+  height: .55rem;
+}
+.top_tool a {
+  float: left;
+  line-height: 0.28rem;
+}
+.search-container {
+  padding: .1rem .1rem;
+}
+.search-bar {
+  position: relative;
+  height: .35rem;
+}
+.search-bar input {
+  border: .02rem solid #006699;
+  border-radius: .05rem;
+  height: 100%;
+  float: left;
+}
+.search-bar button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.16rem;
+  height: 100%;
+  border-radius: 0 .05rem .05rem 0;
+}
+.search-list {
+  font-size: .14rem;
+  color: #666;
+}
+.search-list .sl_title span {
+  float: left;
+}
+.search-list .sl_title a {
+  float: right;
+  width: initial;
+}
+.search-list .sl_contents {
+  font-size: .14rem;
+}
+.search-list .sl_contents li {
+  border: .01rem solid #ccc;
+  height: 0.3rem;
+  padding: .05rem;
+}
+.search-list .sl_contents a {
+  float: left;
+  width: initial;
+}
+.search-list .sl_contents span {
+  float: right;
+}

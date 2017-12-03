@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>二人赚</title>
+    <meta name="description" content="二人赚是中国最大的正品运动鞋、皮鞋网上专卖。二人赚网经营的品牌包括耐克、阿迪达斯、李宁、匡威等国内外知名品牌的篮球鞋,板鞋,休闲鞋,跑步鞋,帆布...">
+    <meta name="Keywords" content="二人赚 二人赚鞋城 买鞋子 上二人赚 运动鞋 篮球鞋 帆布鞋 跑步鞋 男鞋 女鞋 足球鞋 休闲鞋 凉鞋 户外鞋 布洛克 高跟鞋 单鞋 豆豆鞋 乐福鞋 牛津鞋 凉拖 皮鞋 短靴 长靴 登山鞋 徒步鞋 硫化鞋 训练鞋 溯溪鞋 越野鞋 板鞋 足球鞋 网球鞋 赛车鞋 雪地靴 马丁靴 商务 英伦">
+    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="./assets/fa/css/font-awesome.css">
+    <link rel="stylesheet" href="./assets/mui/css/mui.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/cart.css">
+</head>
+
+<body>
+    <div class="view">
+        <!-- 头部工具栏 -->
+        <div class="top_tool">
+            <a href="javascript:history.back()" class="fa fa-arrow-left"></a>
+            <h4>购物车
+                <a href="javascript:;" class="fa fa-refresh"></a>
+            </h4>
+        </div>
+        <div class="cart-container mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里放置真实显示的DOM内容-->
+                <ul id="OA_task_2" class="mui-table-view">
+
+                </ul>
+                <div class="hidden">
+                </div>
+            </div>
+        </div>
+        <div class="price_total">
+            <span class="price_result">订单总额：&yen;0.00</span>
+            <button type="button" class="mui-btn mui-btn-yellow">生成订单</button>
+        </div>
+        <!-- 底部导航 -->
+        <footer>
+            <a href="/m/index.html">
+                <span class="fa fa-home"></span>
+                <p>首页</p>
+            </a>
+            <a href="/m/cate.html">
+                <span class="fa fa-bars"></span>
+                <p>分类</p>
+            </a>
+            <a href="/m/cart.html" class="active">
+                <span class="fa fa-shopping-cart"></span>
+                <p>购物车</p>
+            </a>
+            <a href="javascript:;">
+                <span class="fa fa-user"></span>
+                <p>会员中心</p>
+            </a>
+        </footer>
+    </div>
+    <script type="text/template" id="datashow">
+        <% if(items.length==0){ %>
+            <li>购物车为空</li>
+            <% }else { %>
+                <% for(var i=0;i<items.length;i++){ %>
+                    <li class="mui-table-view-cell" data-size='<%= items[i].size%>' data-num='<%= items[i].num%>' data-productSize='<%= items[i].productSize%>'
+                        data-id='<%= items[i].id%>' data-productNum='<%= items[i].productNum%>'>
+                        <div class="mui-slider-right mui-disabled">
+                            <a class="mui-btn mui-btn-blue">编辑</a>
+                            <a class="mui-btn mui-btn-red">删除</a>
+                        </div>
+                        <div class="mui-slider-handle cart-box mui-clearfix">
+                            <a class="mui-navigate-right">
+                                <div class="cart-left">
+                                    <img src="<%= items[i].pic[0].picAddr %>" alt="">
+                                    <input type="checkbox" class='check' data-price='<%= items[i].price%>' data-num='<%= items[i].num%>' />
+                                </div>
+                                <div class="cart-right mui-text-left">
+                                    <p class="cart_name">
+                                        <%= items[i].proName%>
+                                    </p>
+                                    <span class="cart_price">
+                                        <%= items[i].price%>
+                                    </span>
+                                    <del class="cart_oldPrice">
+                                        <%= items[i].oldPrice%>
+                                    </del>
+                                    <p class="cart_size">鞋码:
+                                        <%= items[i].size%>
+                                    </p>
+                                    <span class="cart_num">x
+                                        <%= items[i].num%>双</span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <% } %>
+                        <% } %>
+
+
+    </script>
+    <script type="text/template" id="editcart">
+        <div class="product_size">
+            尺码:
+            <%  
+                var sizeArr=productsize.split('-');
+                var startsize=sizeArr[0],endsize=sizeArr[1];
+            %>
+                <%  for( var i=startsize;i<=endsize;i++){%>
+                    <span class="PR-sizes <%= i==size?'active':' '%>">
+                        <%= i%>
+                    </span>
+                    <% } %>
+        </div>
+        <div class="product_num" data-id='<%= id%>'>
+            数量：
+            <div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='<%= productnum%>'>
+                <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                <input class="mui-input-numbox" type="number" value='<%= num%>'>
+                <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+            </div>
+        </div>
+
+    </script>
+    <script src="./assets/mui/js/mui.js"></script>
+    <script src="./assets/artTemplate/template-native.js"></script>
+    <script src="./assets/zepto/zepto.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/cart.js"></script>
+</body>
+
+</html>
